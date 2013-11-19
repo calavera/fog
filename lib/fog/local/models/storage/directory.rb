@@ -21,12 +21,10 @@ module Fog
         end
 
         def files
-          @files ||= begin
-            Fog::Storage::Local::Files.new(
-              :directory    => self,
-              :service   => service
-            )
-          end
+          Fog::Storage::Local::Files.new(
+            :directory    => self,
+            :service   => service
+          )
         end
 
         def public=(new_public)
